@@ -2,12 +2,12 @@ import React, { Component } from "react";
 import Card from "./components/Card/Card";
 import Wrapper from "./components/Wrapper/Wrapper";
 import Header from "./components/Header/Header";
-import cards from "./cards.json";
+import Cards from "./cards.json";
 
 class App extends Component {
   // Setting this.state.cards to the cards json array
   state = {
-    cards, 
+    cards: cards, 
     score: 0, 
     highscore: 0
   };
