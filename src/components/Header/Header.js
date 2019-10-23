@@ -1,7 +1,7 @@
 // This page is responsible for the jumbotron and header 
 
 import React from 'react'; 
-import "./styles.css"; 
+// import "./styles.css"; 
 
 const Header = () => 
 

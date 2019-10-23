@@ -7,9 +7,12 @@ import Cards from "./cards.json";
 class App extends Component {
   // Setting this.state.cards to the cards json array
   state = {
-    cards: cards, 
+    message: 'Click a card to start!', 
+    cards: Cards, 
     score: 0, 
-    highscore: 0
+    highscore: 0, 
+    Cards, 
+    id: []
   };
 
 
@@ -18,7 +21,7 @@ class App extends Component {
     return (
       <Wrapper>
         <Header score={this.state.score} highscore={this.state.highscore}>Clicky Game</Header>
-        {this.state.friends.map(cards => (
+        {this.state.cards.map(cards => (
           <Card
             id={cards.id}
             key={cards.id}
