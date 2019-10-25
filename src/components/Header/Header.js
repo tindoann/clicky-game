@@ -3,7 +3,7 @@
 import React from 'react'; 
 // import "./styles.css"; 
 
-const Header = () => 
+const Header = props => 
 
 <div className="align-items-center bg-header jumbotron header-hgt header-pad head-mar-top nav-shadow neon text-center yx-auto text-center">
   <div className="Header">
