@@ -8,7 +8,7 @@ import cards from "./Cards.json";
 // By extending the React.Component class, App inherits functionality from it
 class App extends Component {
 
-  // setting the initial state of the App component 
+  // setting the initial state 
   // setting this.state.cards to the cards json array
   state = {
     cards, 
@@ -36,9 +36,16 @@ class App extends Component {
       return true;
     }
 
+    // Activity 29 from React 19 folder 
+    
+    // function clickCount (id) {}
+    
     clickCount = id => {
+      // search for the specific card in the array 
       this.state.cards.find((e, i) => {
         if (e.id === id) {
+
+          // ??
           if(cards[i].count === 0){
             cards[i].count = cards[i].count + 1;
             this.setState({score : this.state.score + 1}, function(){
@@ -55,12 +62,12 @@ class App extends Component {
   
    
   // The render method returns the JSX that should be rendered
-  // Map over this.state.cards and render a Card component for each card object
+  // Map over this.state.card and render a Card component for each friend object
   render() {
     return (
       <Wrapper>
-        <Header score={this.state.score} highScore={this.state.highScore}>Clicky Game</Header>
-        <Nav />
+        <Header>Gudetama Memory Game</Header>
+        <Nav score={this.state.score} highScore={this.state.highScore} />
           {this.state.cards.map(cards => (
         <Card
             clickCount={this.clickCount}
