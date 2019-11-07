@@ -17,7 +17,7 @@ class App extends Component {
     message: 'Click a card to start!', 
   };
   
-    gameOver = () => {
+    reset = () => {
       if (this.state.score > this.state.highScore) {
         this.setState({highScore: this.state.score});
       }
@@ -29,6 +29,23 @@ class App extends Component {
       // reset the score back to 0
       this.setState({score: 0});
       return true;
+    }
+
+    clickCount = id => {
+      this.state.cards.find((e, i) => {
+        if (e.id === id) {
+          if(cards[i].count === 0){
+            cards[i].count = cards[i].count + 1;
+            this.setState({score : this.state.score + 1}, function(){
+              console.log(this.state.score);
+            });
+            this.state.cards.sort(() => Math.random() - 0.5)
+            return true; 
+          } else {
+            this.reset();
+          }
+        }
+      });
     }
   
    
