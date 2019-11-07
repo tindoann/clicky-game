@@ -8,24 +8,29 @@ import cards from "./Cards.json";
 // By extending the React.Component class, App inherits functionality from it
 class App extends Component {
 
-  // Setting the initial state of the App component 
-  // Setting this.state.cards to the cards json array
+  // setting the initial state of the App component 
+  // setting this.state.cards to the cards json array
   state = {
-    cards: cards, 
+    cards, 
     score: 0, 
     highScore: 0, 
     message: 'Click a card to start!', 
   };
   
     reset = () => {
+      // if the new score is greater than the high score, 
+      // change the highScore to the new score 
       if (this.state.score > this.state.highScore) {
         this.setState({highScore: this.state.score});
       }
-      // loop though each card 
+
+      // rset the count 0 
       this.state.cards.forEach(cards => {
         cards.count = 0;
       });
+
       alert(`You lose \n score: ${this.state.score}`);
+
       // reset the score back to 0
       this.setState({score: 0});
       return true;
@@ -58,6 +63,7 @@ class App extends Component {
         <Nav />
           {this.state.cards.map(cards => (
         <Card
+            clickCount={this.clickCount}
             id={cards.id}
             key={cards.id}
             image={cards.image}
