@@ -7,7 +7,7 @@ const Nav = props => (
   <nav className='Nav fixed-top bg-light'>
     <h4 className='title'>{props.children}</h4>
     <h4>{props.message}</h4>
-    <h4>Score: {props.score} | High Score: {props.highscore}</h4>
+    <h4>Score: {props.score} | High Score: {props.highScore}</h4>
   </nav>
 ); 
 
